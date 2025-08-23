@@ -8,4 +8,8 @@ version = "0.0.1"
 description = "error handling library"
 readme = "README.md"
 requires-python = ">=3.8"
-
+license = {text = "MIT"}
+authors = [
+  { name="Shikhar Aditya", email="satyamshikhar@gmail.com" }
+]
+keywords = ["error-handling", "middleware", "python"]
