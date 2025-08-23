@@ -1,9 +1,0 @@
-pyproject.toml
-mongoose/__init__.py
-mongoose/base.py
-mongoose/manager.py
-mongoose.egg-info/PKG-INFO
-mongoose.egg-info/SOURCES.txt
-mongoose.egg-info/dependency_links.txt
-mongoose.egg-info/top_level.txt
-mongoose/examples/example.py
