@@ -1,14 +1,17 @@
 import sys
+from pyerrorhelper.ollamembedder import OllamaEmbedder
+import traceback 
 
 class ErrorManager:
     def __init__(self):
+        self.slm = OllamaEmbedder()
         self.old_hook = sys.excepthook
 
     def handle_error(self, exc_type, exc_value, exc_traceback):
-        print("Custom Error Handler:")
-        print(f"Error Type: {exc_type.__name__}")
-        print(f"Error Message: {exc_value}")
-        print(f"Traceback: {exc_traceback}")
+        tb_list = traceback.format_tb(exc_traceback)
+        tb_output = "".join(tb_list)
+        print(self.slm.summarize_code(tb_output))
+
     
     def install(self):
         sys.excepthook = self.handle_error
