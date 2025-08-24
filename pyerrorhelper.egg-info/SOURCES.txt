@@ -4,6 +4,7 @@ pyproject.toml
 pyerrorhelper/__init__.py
 pyerrorhelper/base.py
 pyerrorhelper/manager.py
+pyerrorhelper/ollamembedder.py
 pyerrorhelper.egg-info/PKG-INFO
 pyerrorhelper.egg-info/SOURCES.txt
 pyerrorhelper.egg-info/dependency_links.txt
