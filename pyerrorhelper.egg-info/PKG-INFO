@@ -1,7 +1,7 @@
 Metadata-Version: 2.4
 Name: pyerrorhelper
-Version: 0.1.0
-Summary: error handling library
+Version: 0.1.1
+Summary: AI enabled error handling library
 Author-email: Shikhar Aditya <satyamshikhar@gmail.com>
 License: MIT
 Keywords: error-handling,middleware,python,ai,ai-error-handling,ai-error-summarization
