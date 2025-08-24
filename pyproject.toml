@@ -12,4 +12,4 @@ license = {text = "MIT"}
 authors = [
   { name="Shikhar Aditya", email="satyamshikhar@gmail.com" }
 ]
-keywords = ["error-handling", "middleware", "python"]
+keywords = ["error-handling", "middleware", "python", "ai", "ai-error-handling", "ai-error-summarization"]
