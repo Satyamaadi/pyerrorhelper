@@ -1,0 +1,72 @@
+venv/
+
+# ---- Python ----
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*$py.class
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.conda/
+*.env
+*.venv
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Logs & debug
+*.log
+*.pot
+*.mo
+*.swp
+*.swo
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.iml
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ollama / AI cache (if any)
+ollama_models/
+ollama_cache/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Misc
+*.tmp
+*.bak
