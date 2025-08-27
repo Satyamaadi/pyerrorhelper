@@ -50,7 +50,9 @@ Name: Shikhar Aditya
 
 Email: satyamshikhar@gmail.com
 
-GitHub: [Satyamaadi](https://github.com/Satyamaadi)
+Github Repo Link: [pyerrorhandler](https://github.com/Satyamaadi/pyerrorhelper)
+
+GitHub Personal Profile: [Satyamaadi](https://github.com/Satyamaadi)
 
 ## 🤝 Contributing
 
