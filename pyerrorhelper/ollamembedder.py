@@ -1,5 +1,6 @@
 import subprocess
 import platform
+import time
 import requests
 
 class OllamaEmbedder:
@@ -38,6 +39,17 @@ class OllamaEmbedder:
     def summarize(self, code: str, model: str = "codellama") -> str:
         if not self.ensure_ollama_installed():
             raise RuntimeError("Ollama is not installed. Please follow instructions above.")
+        
+        ollama_proc = subprocess.Popen(
+        ["ollama", "serve"],
+        stdout=subprocess.DEVNULL,  # or subprocess.PIPE if you want logs
+        stderr=subprocess.DEVNULL
+        )
+
+        print("Ollama server started (PID:", ollama_proc.pid, ")")
+
+        # Give the server a moment to start
+        time.sleep(2)
 
         # Ensure model is available
         subprocess.run(["ollama", "pull", model], check=False)

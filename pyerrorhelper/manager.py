@@ -10,7 +10,7 @@ class ErrorManager:
     def handle_error(self, exc_type, exc_value, exc_traceback):
         tb_list = traceback.format_tb(exc_traceback)
         tb_output = "".join(tb_list)
-        print(self.slm.summarize_code(tb_output))
+        print(self.slm.summarize(tb_output))
 
     
     def install(self):
