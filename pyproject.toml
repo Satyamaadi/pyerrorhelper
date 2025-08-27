@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyerrorhelper"
-version = "0.1.1"
+version = "0.2.1"
 description = "AI enabled error handling library"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -13,3 +13,6 @@ authors = [
   { name="Shikhar Aditya", email="satyamshikhar@gmail.com" }
 ]
 keywords = ["error-handling", "middleware", "python", "ai", "ai-error-handling", "ai-error-summarization"]
+
+[tool.setuptools]
+packages = ["pyerrorhelper"]
