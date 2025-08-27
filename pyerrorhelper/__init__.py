@@ -1,4 +1,4 @@
-from .manager import ErrorManager    
+from .manager import ErrorManager
 
 __all__ = ["ErrorManager"]
 

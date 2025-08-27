@@ -9,22 +9,22 @@
 `pyerrorhelper` is a Python library that brings **AI-powered error explainability** into your runtime environment.
 
 ### Why?
-Developers typically use AI **before** running code (for generation) or **after** running code (for debugging).  
+Developers typically use AI **before** running code (for generation) or **after** running code (for debugging).
 This package enables AI **during execution**, so your running Python programs can leverage AI-driven insights in real time.
 
 ### Key Objectives
-- **Runtime AI integration** – Make AI available inside the running program (starting with error explainability).  
-- **Retrofit older systems** – Allow existing Python systems to adopt AI workflows with minimal changes.  
-- **Free & local AI models** – Works with free AI solutions - using [Ollama](https://www.ollama.com).  
+- **Runtime AI integration** – Make AI available inside the running program (starting with error explainability).
+- **Retrofit older systems** – Allow existing Python systems to adopt AI workflows with minimal changes.
+- **Free & local AI models** – Works with free AI solutions - using [Ollama](https://www.ollama.com).
 
 ---
 
 ## ⚙️ Installation
 
-1. **Install Python**  
-   Download and install from [python.org](https://www.python.org/downloads/).  
+1. **Install Python**
+   Download and install from [python.org](https://www.python.org/downloads/).
 
-2. **Install pyerrorhelper**  
+2. **Install pyerrorhelper**
    ```bash
    pip install pyerrorhelper
    ```

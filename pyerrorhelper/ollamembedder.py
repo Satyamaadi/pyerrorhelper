@@ -1,15 +1,16 @@
 import subprocess
 import platform
 import time
-import requests
+import requests  # type: ignore
+
 
 class OllamaEmbedder:
-    def __init__(self):
+    def __init__(self) -> None:
         self.ensure_ollama_installed()
 
     def ensure_ollama_installed(self) -> bool:
         try:
-            subprocess.run(["ollama", "--version"], check=True, capture_output=True)
+            subprocess.run(["ollama", "--version"], check=True, capture_output=True)  # noqa E501
             return True
         except (FileNotFoundError, subprocess.CalledProcessError):
             print("Ollama is not installed. Installing now...")
@@ -19,14 +20,20 @@ class OllamaEmbedder:
             if os_type in ("darwin", "linux"):
                 try:
                     subprocess.run(
-                        ["sh", "-c", "curl -fsSL https://ollama.com/install.sh | sh"],
-                        check=True
+                        [
+                            "sh",
+                            "-c",
+                            "curl -fsSL https://ollama.com/install.sh | sh",
+                        ],  # noqa E501
+                        check=True,
                     )
                     print("✅ Ollama installed successfully.")
                     return True
-                except subprocess.CalledProcessError as e:
+                except subprocess.CalledProcessError:
                     print("❌ Failed to install Ollama automatically.")
-                    print("Run this manually:\n  curl -fsSL https://ollama.com/install.sh | sh")
+                    print(
+                        "Run this manually:\n  curl -fsSL https://ollama.com/install.sh | sh"  # noqa E501
+                    )
                     return False
 
             elif os_type == "windows":
@@ -35,15 +42,21 @@ class OllamaEmbedder:
                 print("👉 https://ollama.com/download/windows")
                 return False
 
+            else:
+                print(f"❌ Unsupported OS: {os_type}. Please install Ollama manually.")  # noqa E501
+                print("👉 https://ollama.com/download")  # noqa E501
+                return False  # noqa E501
 
     def summarize(self, code: str, model: str = "codellama") -> str:
         if not self.ensure_ollama_installed():
-            raise RuntimeError("Ollama is not installed. Please follow instructions above.")
-        
+            raise RuntimeError(
+                "Ollama is not installed. Please follow instructions above."
+            )
+
         ollama_proc = subprocess.Popen(
-        ["ollama", "serve"],
-        stdout=subprocess.DEVNULL,  # or subprocess.PIPE if you want logs
-        stderr=subprocess.DEVNULL
+            ["ollama", "serve"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
         )
 
         print("Ollama server started (PID:", ollama_proc.pid, ")")
@@ -55,10 +68,12 @@ class OllamaEmbedder:
         subprocess.run(["ollama", "pull", model], check=False)
 
         url = "http://localhost:11434/api/generate"
-        prompt = f"""Summarize the following error \n\n```python\n{code}\n``` 
-        - so that we get to understand the root cause and also list possible solutions also:"""
+        prompt = f"""Summarize the following error \n\n```python\n{code}\n```
+        - so that we get to understand the root cause and also list possible solutions also:"""  # noqa E501
 
-        resp = requests.post(url, json={"model": model, "prompt": prompt, "stream": False})
+        resp = requests.post(
+            url,
+            json={"model": model, "prompt": prompt, "stream": False},
+        )
         resp.raise_for_status()
-        return resp.json()["response"].strip()
-
+        return str(resp.json()["response"].strip())

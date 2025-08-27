@@ -1,20 +1,28 @@
 import sys
 from pyerrorhelper.ollamembedder import OllamaEmbedder
-import traceback 
+import traceback
+from pyerrorhelper.base import BaseErrorHandler
+from types import TracebackType
 
-class ErrorManager:
-    def __init__(self):
+
+class ErrorManager(BaseErrorHandler):
+    def __init__(self) -> None:
         self.slm = OllamaEmbedder()
         self.old_hook = sys.excepthook
 
-    def handle_error(self, exc_type, exc_value, exc_traceback):
+    def process_exception(
+        self,
+        exc_type: type[BaseException],
+        exc_value: BaseException,
+        exc_traceback: TracebackType | None,
+    ) -> None:
         tb_list = traceback.format_tb(exc_traceback)
         tb_output = "".join(tb_list)
-        print(self.slm.summarize(tb_output))
+        summary = self.slm.summarize(tb_output)
+        print(summary)
 
-    
-    def install(self):
-        sys.excepthook = self.handle_error
-    
-    def uninstall(self):
+    def install(self) -> None:
+        sys.excepthook = self.process_exception
+
+    def uninstall(self) -> None:
         sys.excepthook = self.old_hook
