@@ -19,6 +19,10 @@ This package enables AI **during execution**, so your running Python programs ca
 
 ---
 
+## Architecture Diagram
+
+![Architecture Digram](pyerrorhelper.jpg)
+
 ## ⚙️ Installation
 
 1. **Install Python**
