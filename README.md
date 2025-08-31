@@ -21,7 +21,7 @@ This package enables AI **during execution**, so your running Python programs ca
 
 ## Architecture Diagram
 
-![Architecture Digram](pyerrorhelper.jpg)
+![Architecture Digram](https://raw.githubusercontent.com/Satyamaadi/pyerrorhelper/refs/heads/main/pyerrorhelper.jpg)
 
 ## 🛠️ Working
 
