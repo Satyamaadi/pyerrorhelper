@@ -4,6 +4,9 @@
 
 ---
 
+![Pre-commit](https://github.com/Satyamaadi/pyerrorhelper/actions/workflows/pre-commit.yml/badge.svg)
+
+
 ## 📖 Description
 
 `pyerrorhelper` is a Python library that brings **AI-powered error explainability** into your runtime environment.
