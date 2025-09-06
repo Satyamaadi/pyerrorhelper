@@ -4,7 +4,7 @@
 
 ---
 
-![Pre-commit](https://github.com/Satyamaadi/pyerrorhelper/actions/workflows/pre-commit.yml/badge.svg)
+![Pre-commit](https://github.com/Satyamaadi/pyerrorhelper/actions/workflows/pre-commit.yaml/badge.svg)
 
 
 ## 📖 Description
