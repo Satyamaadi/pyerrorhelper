@@ -25,18 +25,18 @@ This package enables AI **during execution**, so your running Python programs ca
 
 ## 🛠️ Working
 
-There are two main components (class) in the system - 
+There are two main components (class) in the system -
 
 - ErrorMananger (manager.py) -
     install - this method handles overriding sys.excepthook with custom method.
     process_exception - this method calls the second component (OllamaEmbedder) and helps in summarizing the error
     uninstall - this method makes the sys.excepthook as default error handling way
 
-- OllamEmbedder (ollamaembedder.py) - 
+- OllamEmbedder (ollamaembedder.py) -
     ensure_ollama_installed - this method ensures that Ollama is installed, if not - it tries installing it via curl command
     summarize - this method uses the Ollama supported GPT model to summarize the errors
 
-## 🔀 Flow of control - 
+## 🔀 Flow of control -
 
 - When we use install() of ErrorManager -> sys.excepthook is overridden
 - and at the same time -> OllamaEmbedder is initialised and it checks for Ollama installation on local system
@@ -62,7 +62,7 @@ class Test:
     def __init__(self):
         self.error_manager = ErrorManager()
         self.error_manager.install()
-    
+
     def some_function(self):
         cause_some_error()
 ```
